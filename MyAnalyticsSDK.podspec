@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "MyAnalyticsSDK"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.2"
   spec.summary      = "Zero-code Firebase analytics SDK"
   spec.description  = "Automatic global Firebase analytics wrapper for iOS"
 
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
     :tag => spec.version.to_s
   }
 
-  spec.ios.deployment_target = "14.0"
+  spec.ios.deployment_target = "15.0"
   spec.swift_version = "5.0"
 
   spec.static_framework = true
@@ -24,7 +24,8 @@ Pod::Spec.new do |spec|
   spec.dependency "Firebase/Analytics"
 
   spec.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES'
+    'DEFINES_MODULE' => 'YES',
+    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
   }
 
 end
